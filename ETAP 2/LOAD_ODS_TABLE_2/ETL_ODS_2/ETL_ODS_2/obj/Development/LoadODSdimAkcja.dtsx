@@ -1,0 +1,905 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/10/2024 3:24:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ODCCL04"
+  DTS:CreatorName="DESKTOP-ODCCL04\sandr"
+  DTS:DTSID="{9B42422E-A272-4AA2-8F57-6F9691524779}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{0AF40CE4-2FB5-45CA-9621-22D7F5F326BF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8C4EEC28-D946-447B-98DC-A95405324D38}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package1-{8C4EEC28-D946-447B-98DC-A95405324D38}194.29.170.4.ABD_GR06_ODS.ABDGR06;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEgGf1d66Ik6PY0BYlpzu4AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABLk5WuT/XJHCSuU3Fl+GnARW710Cfo6mSRr8UKwKm7GAAAAAAOgAAAAAIAACAAAABpVVSlEcRpDdiJU+CTquZ/pYE7FllvTluZZ4ZwZjnlLxAAAADNgRpYYkIcq+R4m+eUk+vTQAAAAIxV3VFj7ADWh1fBOv905rDeZtwjVkHFT2B4hzD3n07LVvjlCNu61lDbxeKYqXKnVtqYhPbRohaZOE31NC+YDv8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC2.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AE803601-6526-497F-9385-CB04D67D7B74}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_SRC2.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_SRC2;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package1-{AE803601-6526-497F-9385-CB04D67D7B74}194.29.170.4.ABD_GR06_SRC2.ABDGR06;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEgGf1d66Ik6PY0BYlpzu4AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACs9FQCiYfhmG1XhF/zaPpR7cNn7EUP4ovQ7fQIaRD0WAAAAAAOgAAAAAIAACAAAACquNPRPo3ptYK93fwSN9xPPB+5sYB7q2YtNHPd6xfN0hAAAADzu97lVePgHfVGozO+MdMkQAAAACg3/0fTP8paOVxPGId5bRFgwv8z3cgSRnAO42eYTI6uejDx/lPYOnJs8Btd+qaKtjpdPW7LHUg7rDrUX71SfSc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Czyszczenie DimAkcja"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3E67100A-3976-4B86-954B-2D16AEE3E95B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Czyszczenie DimAkcja"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8C4EEC28-D946-447B-98DC-A95405324D38}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dimAkcjaSt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Przesylanie zmian DimAkcji"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0624E7C5-A8B7-422E-8EC1-A259FE424295}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Przesylanie zmian DimAkcji"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabela DimAkcjaSt"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimAkcjaSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[idAkcji]"
+                      cachedDataType="i4"
+                      cachedName="idAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[idAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[idAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[statusAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="statusAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[statusAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[statusAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[nazwaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="nazwaAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[nazwaAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[nazwaAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[lokalizacjaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="lokalizacjaAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[lokalizacjaAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[rodzajAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="rodzajAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[rodzajAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[rodzajAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[dataRozpoczecia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataRozpoczecia"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataRozpoczecia]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[dataZakonczenia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataZakonczenia"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataZakonczenia]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataZakonczenia]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[opisAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="opisAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[opisAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[opisAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[targetWiekowy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="targetWiekowy"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[targetWiekowy]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[targetWiekowy]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[formaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaAkcji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[formaAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[formaAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[sponsorzy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sponsorzy"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[sponsorzy]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[sponsorzy]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[dataUtworzenia]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dataUtworzenia"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataUtworzenia]" />
+                    <inputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].Columns[dataModyfikacji]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dataModyfikacji"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataModyfikacji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataModyfikacji]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[idAkcji]"
+                      dataType="i4"
+                      name="idAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="statusAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      name="nazwaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="lokalizacjaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="rodzajAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataRozpoczecia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataZakonczenia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="opisAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="targetWiekowy" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sponsorzy" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Ładowanie źródłowe AkcjeMarketingowe"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT am.idAkcji,
+statusAkcji,
+nazwaAkcji,
+lokalizacjaAkcji,
+rodzajAkcji,
+dataRozpoczecia,
+dataZakonczenia,
+opisAkcji,
+targetWiekowy, 
+formaAkcji,
+sponsorzy,
+am.dataUtworzenia,
+am.dataModyfikacji
+FROM 
+[dbo].[AkcjeSzczegoly] s
+INNER JOIN [dbo].[AkcjeMarketingowe] am ON s.idAkcji = am.idAkcji
+WHERE am.[dataModyfikacji] &gt;= dateadd(day,-1, cast(CURRENT_TIMESTAMP as date))
+UNION
+SELECT s.idAkcji,
+statusAkcji,
+nazwaAkcji,
+lokalizacjaAkcji,
+rodzajAkcji,
+dataRozpoczecia,
+dataZakonczenia,
+opisAkcji,
+targetWiekowy, 
+formaAkcji,
+sponsorzy,
+s.dataUtworzenia,
+s.dataModyfikacji
+FROM 
+[dbo].[AkcjeSzczegoly] s
+INNER JOIN [dbo].[AkcjeMarketingowe] am ON s.idAkcji = am.idAkcji
+WHERE s.[dataModyfikacji] &gt;= dateadd(day,-1, cast(CURRENT_TIMESTAMP as date))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC2.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC2.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[idAkcji]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[idAkcji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[idAkcji]"
+                      name="idAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[statusAkcji]"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[statusAkcji]"
+                      name="statusAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[nazwaAkcji]"
+                      length="25"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[nazwaAkcji]"
+                      name="nazwaAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[lokalizacjaAkcji]"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]"
+                      name="lokalizacjaAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[rodzajAkcji]"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[rodzajAkcji]"
+                      name="rodzajAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataRozpoczecia]"
+                      length="10"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]"
+                      name="dataRozpoczecia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataZakonczenia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataZakonczenia]"
+                      length="10"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataZakonczenia]"
+                      name="dataZakonczenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[opisAkcji]"
+                      length="200"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[opisAkcji]"
+                      name="opisAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[targetWiekowy]"
+                      length="15"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[targetWiekowy]"
+                      name="targetWiekowy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[formaAkcji]"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[formaAkcji]"
+                      name="formaAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[sponsorzy]"
+                      length="50"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[sponsorzy]"
+                      name="sponsorzy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[idAkcji]"
+                      dataType="i4"
+                      name="idAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="statusAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      name="nazwaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="lokalizacjaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="rodzajAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataRozpoczecia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataZakonczenia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="opisAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="targetWiekowy" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sponsorzy" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[idAkcji]"
+                      dataType="i4"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[idAkcji]"
+                      name="idAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[statusAkcji]"
+                      name="statusAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[nazwaAkcji]"
+                      name="nazwaAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[lokalizacjaAkcji]"
+                      name="lokalizacjaAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[rodzajAkcji]"
+                      name="rodzajAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataRozpoczecia]"
+                      name="dataRozpoczecia" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataZakonczenia]"
+                      name="dataZakonczenia" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[opisAkcji]"
+                      name="opisAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[targetWiekowy]"
+                      name="targetWiekowy" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[formaAkcji]"
+                      name="formaAkcji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[sponsorzy]"
+                      name="sponsorzy" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Przesylanie zmian DimAkcji.Paths[OLE DB Source Output]"
+              endId="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CBF9F102-7B69-4AE6-8D93-FC68A58517A6}"
+      DTS:From="Package\Czyszczenie DimAkcja"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Przesylanie zmian DimAkcji" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\Czyszczenie DimAkcja"
+          TopLeft="129.374998072162,50.6315799003823" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Przesylanie zmian DimAkcji"
+          TopLeft="176.874997364357,181.315792886504" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="223.374998072162,93.298246567049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.8333326255283,88.017546319455"
+              Start="0,0"
+              End="58.8333326255283,80.517546319455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.0087731597275" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.0087731597275"
+                    Point2="0,44.0087731597275"
+                    Point3="4,44.0087731597275" />
+                  <mssgle:LineSegment
+                    End="54.8333326255283,44.0087731597275" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.8333326255283,44.0087731597275"
+                    Point2="58.8333326255283,44.0087731597275"
+                    Point3="58.8333326255283,48.0087731597275" />
+                  <mssgle:LineSegment
+                    End="58.8333326255283,80.517546319455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Przesylanie zmian DimAkcji">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="272,42.6666666666667"
+          Id="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe"
+          TopLeft="171.874997438863,18.4736845582476" />
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt"
+          TopLeft="218.749996740371,158.052634553896" />
+        <EdgeLayout
+          Id="Package\Przesylanie zmian DimAkcji.Paths[OLE DB Source Output]"
+          TopLeft="305.979163756284,61.1403512249143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96.9122833289817"
+              Start="0,0"
+              End="0,89.4122833289817">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.4122833289817" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Przesylanie zmian DimAkcji\Tabela DimAkcjaSt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Przesylanie zmian DimAkcji\Ładowanie źródłowe AkcjeMarketingowe">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,560 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/10/2024 3:59:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ODCCL04"
+  DTS:CreatorName="DESKTOP-ODCCL04\sandr"
+  DTS:DTSID="{5CA985D9-FD5F-4768-BE4A-2327B4E1A47C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{97AFEC51-3ED1-489D-B135-D254155E278E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{78991679-C1D3-4AC0-A142-14E8B2A4A2EE}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{78991679-C1D3-4AC0-A142-14E8B2A4A2EE}194.29.170.4.ABD_GR06_ODS.ABDGR06;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC2.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5441118F-1936-4428-AD53-1C765E6D8EB8}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_SRC2.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_SRC2;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{5441118F-1936-4428-AD53-1C765E6D8EB8}194.29.170.4.ABD_GR06_SRC2.ABDGR06;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Czyszczenie FaktAkcjeSt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{80E97990-8852-4D74-BB47-A6F4F6980E7E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Czyszczenie FaktAkcjeSt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{78991679-C1D3-4AC0-A142-14E8B2A4A2EE}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE FaktAkcjeSt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Przesyłanie zmian FaktAkcjeSt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0A95327F-469A-4B72-BFF9-635EBC5C64AC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Przesyłanie zmian FaktAkcjeSt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabela FaktAkcjeSt"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FaktAkcjeSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].Columns[idAkcji]"
+                      cachedDataType="i4"
+                      cachedName="idAkcji"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].ExternalColumns[idAkcji]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[idAkcji]" />
+                    <inputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].Columns[liczbaUczestnikow]"
+                      cachedDataType="i4"
+                      cachedName="liczbaUczestnikow"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].ExternalColumns[liczbaUczestnikow]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[liczbaUczestnikow]" />
+                    <inputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].Columns[calkowityKoszt]"
+                      cachedDataType="numeric"
+                      cachedName="calkowityKoszt"
+                      cachedPrecision="20"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].ExternalColumns[calkowityKoszt]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[calkowityKoszt]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].ExternalColumns[idAkcji]"
+                      dataType="i4"
+                      name="idAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].ExternalColumns[liczbaUczestnikow]"
+                      dataType="i4"
+                      name="liczbaUczestnikow" />
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input].ExternalColumns[calkowityKoszt]"
+                      dataType="numeric"
+                      name="calkowityKoszt"
+                      precision="20"
+                      scale="6" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Ładowanie FaktAkcjeSt"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT am.idAkcji,
+liczbaUczestnikow,
+calkowityKoszt,
+am.dataUtworzenia,
+am.dataModyfikacji
+FROM 
+[dbo].[AkcjeSzczegoly] s
+INNER JOIN [dbo].[AkcjeMarketingowe] am ON s.idAkcji = am.idAkcji
+WHERE am.[dataModyfikacji] &gt;= dateadd(day,-1, cast(CURRENT_TIMESTAMP as date))
+UNION
+SELECT s.idAkcji,
+liczbaUczestnikow,
+calkowityKoszt,
+s.dataUtworzenia,
+s.dataModyfikacji
+FROM 
+[dbo].[AkcjeSzczegoly] s
+INNER JOIN [dbo].[AkcjeMarketingowe] am ON s.idAkcji = am.idAkcji
+WHERE s.[dataModyfikacji] &gt;= dateadd(day,-1, cast(CURRENT_TIMESTAMP as date))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC2.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC2.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[idAkcji]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[idAkcji]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[idAkcji]"
+                      name="idAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[liczbaUczestnikow]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[liczbaUczestnikow]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[liczbaUczestnikow]"
+                      name="liczbaUczestnikow"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[calkowityKoszt]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[calkowityKoszt]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[calkowityKoszt]"
+                      name="calkowityKoszt"
+                      precision="20"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[idAkcji]"
+                      dataType="i4"
+                      name="idAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[liczbaUczestnikow]"
+                      dataType="i4"
+                      name="liczbaUczestnikow" />
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[calkowityKoszt]"
+                      dataType="numeric"
+                      name="calkowityKoszt"
+                      precision="20"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[idAkcji]"
+                      dataType="i4"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[idAkcji]"
+                      name="idAkcji" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[liczbaUczestnikow]"
+                      dataType="i4"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[liczbaUczestnikow]"
+                      name="liczbaUczestnikow" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[calkowityKoszt]"
+                      dataType="numeric"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[calkowityKoszt]"
+                      name="calkowityKoszt"
+                      precision="20"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Przesyłanie zmian FaktAkcjeSt.Paths[OLE DB Source Output]"
+              endId="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A1FBD86B-330F-455C-A817-B905689AC6C1}"
+      DTS:From="Package\Czyszczenie FaktAkcjeSt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Przesyłanie zmian FaktAkcjeSt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Czyszczenie FaktAkcjeSt"
+          TopLeft="154.374997699633,78.0000014681565" />
+        <NodeLayout
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\Przesyłanie zmian FaktAkcjeSt"
+          TopLeft="161.249997597188,210.736846071861" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="238.374997699633,120.666668134823">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.2083332308878,90.0701779370383"
+              Start="0,0"
+              End="36.2083332308878,82.5701779370383">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0350889685191" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0350889685191"
+                    Point2="0,45.0350889685191"
+                    Point3="4,45.0350889685191" />
+                  <mssgle:LineSegment
+                    End="32.2083332308878,45.0350889685191" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.2083332308878,45.0350889685191"
+                    Point2="36.2083332308878,45.0350889685191"
+                    Point3="36.2083332308878,49.0350889685191" />
+                  <mssgle:LineSegment
+                    End="36.2083332308878,82.5701779370383" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Przesyłanie zmian FaktAkcjeSt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt"
+          TopLeft="153.12499771826,13.6842107838871" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt"
+          TopLeft="156.87499766238,133.421055142899" />
+        <EdgeLayout
+          Id="Package\Przesyłanie zmian FaktAkcjeSt.Paths[OLE DB Source Output]"
+          TopLeft="245.666664356987,56.3508774505538">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.0701776923455"
+              Start="0,0"
+              End="0,69.5701776923455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5701776923455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Przesyłanie zmian FaktAkcjeSt\Tabela FaktAkcjeSt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Przesyłanie zmian FaktAkcjeSt\Ładowanie FaktAkcjeSt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,12 @@
+SELECT [idKanalu]
+      ,[typKanalu]
+      ,[nazwaKanalu]
+      ,[opisKanalu]
+      ,[dataUtworzeniaKanalu]
+      ,[liczbaOdbiorcow]
+      ,[formaKanalu]
+      ,[kosztKanalu]
+      ,[dataUtworzenia]
+      ,[dataModyfikacji]
+  FROM [dbo].[KanalyAkcji]
+  WHERE [dataModyfikacji] >= dateadd(day, -1, cast(CURRENT_TIMESTAMP as date))

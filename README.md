@@ -2,7 +2,8 @@
 
 ## Cel Projektu:
 Celem projektu jest stworzenie kompletnego systemu analizy danych, obejmującego bazy danych, hurtownię danych (ETL), model OLAP oraz interaktywne dashboardy w środowisku Power BI Desktop.
-
+Stworzona baza danych obejmuje obszar obsługi i kierowania firmą z sektora rozrywki, konkretnie – parkiem rozrywki. Dodatkowo istnieje druga baza danych skupiająca się na działaniach marketingowych realizowanych przez ten park.
+Hurtownia ma zapewnić co najmniej możliwość gromadzenia i analizowania danych dotyczących sprzedaży i obłożenia atrakcji, jak też kosztów pracowniczych i przeprowadzanych akcji marketingowych,w tym ich kosztów.
 ## Narzędzia:
 
 - **SQL Server Management Studio 19**

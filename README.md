@@ -8,7 +8,7 @@ Hurtownia ma zapewnić co najmniej możliwość gromadzenia i analizowania danyc
 
 - **SQL Server Management Studio 19**
 - **Toad Data Modeler 7.2**
-- **Visual Studio 2019**
+- **Visual Studio 2019 (MS SSIS)**
 
 Projekt realizowany jest w zespołach pięcioosobowych i składa się z 4 etapów.
 
@@ -27,7 +27,7 @@ BAZA II
 ![BazaII](img/schemat1.jpg)
 
 
-### W trakcie: 
+
 #### ETAP II (11.03.2024 - 15.04.2024)
 **Cel:** Celem tego etapu projektu jest implementacja hurtowni danych przy użyciu technologii ETL (Microsoft SQL Server Integration Services - SSIS) oraz opartej na modelu konstelacji gwiazdy. Celem jest stworzenie dwóch tabel faktów oraz pięciu tabel wymiarów.
 
@@ -43,15 +43,15 @@ Następnie wcześniej stworzony model danych został poddany kolejnej modyfikacj
 
 BAZA I
 1. Modelowanie i implementacja schematu struktur hurtowni danych - stoworzenie modelu konstelacji gwiazdy
-   ![Model gwiazdy baza I](img/gwiazda1.png)
+   ![Model gwiazdy baza I](images/gwiazda1.png)
 2. Modelowanie schematu struktur ODS
-   ![ODS 1](img/ODS1.png)
+   ![ODS 1](images/ODS1.png)
 
 BAZA II
 1. Konstelacja gwiazdy dla bazy drugiej
-   ![Model gwiazdy baza II](img/gwiazda2.png)
+   ![Model gwiazdy baza II](images/gwiazda2.png)
 2. ODS dla bazy drugiej 
-   ![ODS 2](img/ods2.png)
+   ![ODS 2](images/ods2.png)
 
 
 

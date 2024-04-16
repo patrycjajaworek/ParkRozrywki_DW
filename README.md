@@ -20,11 +20,11 @@ Projekt realizowany jest w zespołach pięcioosobowych i składa się z 4 etapó
 
 BAZA I
 
-![BazaI](img/schematpierwszy.png)
+![BazaI](images/schematpierwszy.png)
 
 BAZA II
 
-![BazaII](img/schemat1.jpg)
+![BazaII](images/schemat1.jpg)
 
 
 

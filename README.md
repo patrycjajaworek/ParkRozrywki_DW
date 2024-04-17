@@ -97,7 +97,7 @@ The project is carried out in teams of five people and consists of 4 stages.
 
 ### Completed: 
 #### STAGE I (26.02.2024 - 11.03.2024)
-** Objective:** Develop two relational databases in MS SQL Server environment.
+**Objective:** Develop two relational databases in MS SQL Server environment.
 
 BASE I
 
@@ -108,7 +108,7 @@ BASE II
 ![BaseII](images/schemat1.jpg)
 
 #### PHASE II (11.03.2024 - 15.04.2024)
-** Purpose:** The purpose of this phase of the project is to implement a data warehouse using ETL technology (Microsoft SQL Server Integration Services - SSIS) and based on the star constellation model. The goal is to create two fact tables and five dimension tables.
+**Purpose:** The purpose of this phase of the project is to implement a data warehouse using ETL technology (Microsoft SQL Server Integration Services - SSIS) and based on the star constellation model. The goal is to create two fact tables and five dimension tables.
 
 **Star design**.
  

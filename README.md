@@ -92,7 +92,7 @@ The project is carried out in teams of five people and consists of 4 stages.
 
 BASE I
 
-![BaseI](images/schemafirst.png)
+![BaseI](images/schematpierwszy.png)
 
 BASE II
 
@@ -113,13 +113,13 @@ The previously created data model was then further modified to create an interme
 
 BASE I
 1 Modeling and implementation of the schema of data warehouse structures - the constellation model of the star was created.
- ![Base I star model](images/star1.png)
+ ![Base I star model](images/gwiazda1.png)
 2 Modeling the schema of ODS structures
  ![ODS 1](images/ODS1.png)
 
 BASE II
 1. star constellation for base two
- ![Star model base II](images/star2.png)
+ ![Star model base II](images/gwiazda2.png)
 2. the ODS for base two 
 ![ODS 2](images/ods2.png)
 

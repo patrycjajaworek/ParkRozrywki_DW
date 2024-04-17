@@ -68,6 +68,15 @@ zasilaniem
 
 
 
+
+
+
+
+
+
+
+
+
 ## ENGLISH VERSION
 
 # Amusement Park
@@ -130,6 +139,6 @@ BASE II
 feeding
 
 #### PHASE IV (13.05.2024 - 03.06.2024)
-- ** Objective:** Dashboards in Microsoft Power BI Desktop analysis tool.
+- **Objective:** Dashboards in Microsoft Power BI Desktop analysis tool.
 
 ## Planned Project Completion Date: 03.06.2024.

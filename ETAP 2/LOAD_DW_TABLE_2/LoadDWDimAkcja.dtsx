@@ -1,0 +1,1582 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/12/2024 6:29:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ODCCL04"
+  DTS:CreatorName="DESKTOP-ODCCL04\sandr"
+  DTS:DTSID="{3C29060E-3945-495F-8E11-3754974C3A6B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{C11947C6-E660-4FAA-87AD-6485F10E5669}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Ładowanie dimUczestnik DW"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D24B01B7-8A6C-404A-ABB8-ABBA783308D0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ładowanie dimUczestnik DW"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Ładowanie dimUczestnik DW\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimAkcja]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{EDD24B8C-67D5-4EE2-85A8-E467DEE7FC49}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[idAkcji]"
+                      cachedDataType="i4"
+                      cachedName="idAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[idAkcjiT]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[statusAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="statusAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[statusAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[statusAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[nazwaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="nazwaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[lokalizacjaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="lokalizacjaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[lokalizacjaAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[rodzajAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="rodzajAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rodzajAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[rodzajAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[dataRozpoczecia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataRozpoczecia"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataRozpoczecia]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[dataZakonczenia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataZakonczenia"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataZakonczenia]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakonczenia]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[opisAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="opisAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[opisAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[opisAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[targetWiekowy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="targetWiekowy"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[targetWiekowy]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[targetWiekowy]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[formaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[formaAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[formaAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].Columns[sponsorzy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sponsorzy"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[sponsorzy]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[sponsorzy]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[idAkcji]"
+                      dataType="i4"
+                      name="idAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[idAkcjiT]"
+                      dataType="i4"
+                      name="idAkcjiT" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="statusAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      name="nazwaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="lokalizacjaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="rodzajAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataRozpoczecia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataZakonczenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="opisAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="targetWiekowy" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sponsorzy" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ładowanie dimUczestnik DW\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[dimAkcja] SET [dataRozpoczecia] = ?,[dataZakonczenia] = ?,[formaAkcji] = ?,[lokalizacjaAkcji] = ?,[nazwaAkcji] = ?,[opisAkcji] = ?,[rodzajAkcji] = ?,[sponsorzy] = ?,[statusAkcji] = ?,[targetWiekowy] = ? WHERE [idAkcjiT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{EDD24B8C-67D5-4EE2-85A8-E467DEE7FC49}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[dataRozpoczecia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataRozpoczecia"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[dataZakonczenia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataZakonczenia"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakonczenia]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[formaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[formaAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[idAkcji]"
+                      cachedDataType="i4"
+                      cachedName="idAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[lokalizacjaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="lokalizacjaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[nazwaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="nazwaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[opisAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="opisAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[opisAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[rodzajAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="rodzajAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[rodzajAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[sponsorzy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sponsorzy"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[sponsorzy]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[statusAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="statusAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[statusAkcji]" />
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].Columns[targetWiekowy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="targetWiekowy"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[targetWiekowy]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="i4"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ładowanie dimUczestnik DW\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimAkcjaSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{947CD517-E0BD-4F9F-BD20-E18BC8EC2386}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAkcji]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAkcji]"
+                      name="idAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[statusAkcji]"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[statusAkcji]"
+                      name="statusAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaAkcji]"
+                      length="25"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaAkcji]"
+                      name="nazwaAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lokalizacjaAkcji]"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]"
+                      name="lokalizacjaAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rodzajAkcji]"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[rodzajAkcji]"
+                      name="rodzajAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataRozpoczecia]"
+                      length="10"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]"
+                      name="dataRozpoczecia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakonczenia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataZakonczenia]"
+                      length="10"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakonczenia]"
+                      name="dataZakonczenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[opisAkcji]"
+                      length="200"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[opisAkcji]"
+                      name="opisAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[targetWiekowy]"
+                      length="15"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[targetWiekowy]"
+                      name="targetWiekowy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[formaAkcji]"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[formaAkcji]"
+                      name="formaAkcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sponsorzy]"
+                      length="50"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[sponsorzy]"
+                      name="sponsorzy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idAkcji]"
+                      dataType="i4"
+                      name="idAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="statusAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      name="nazwaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="lokalizacjaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="rodzajAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataRozpoczecia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataZakonczenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="opisAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="targetWiekowy" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sponsorzy" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idAkcji]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idAkcji]"
+                      name="idAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[statusAkcji]"
+                      name="statusAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaAkcji]"
+                      name="nazwaAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lokalizacjaAkcji]"
+                      name="lokalizacjaAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rodzajAkcji]"
+                      name="rodzajAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataRozpoczecia]"
+                      name="dataRozpoczecia" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataZakonczenia]"
+                      name="dataZakonczenia" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[opisAkcji]"
+                      name="opisAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[targetWiekowy]"
+                      name="targetWiekowy" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[formaAkcji]"
+                      name="formaAkcji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sponsorzy]"
+                      name="sponsorzy" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [dataRozpoczecia], [dataZakonczenia], [formaAkcji], [idAkcjiT], [lokalizacjaAkcji], [nazwaAkcji], [opisAkcji], [rodzajAkcji], [sponsorzy], [statusAkcji], [targetWiekowy] FROM [dbo].[dimAkcja]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{EDD24B8C-67D5-4EE2-85A8-E467DEE7FC49}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[dataRozpoczecia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataRozpoczecia"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[dataRozpoczecia]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[dataZakonczenia]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataZakonczenia"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[dataZakonczenia]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakonczenia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[formaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[formaAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[formaAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[idAkcji]"
+                      cachedDataType="i4"
+                      cachedName="idAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[idAkcjiT]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[lokalizacjaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="lokalizacjaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[lokalizacjaAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[nazwaAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="nazwaAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[nazwaAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[opisAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="opisAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[opisAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[opisAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[rodzajAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="rodzajAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[rodzajAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[rodzajAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[sponsorzy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sponsorzy"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[sponsorzy]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[sponsorzy]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[statusAkcji]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="statusAkcji"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[statusAkcji]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[statusAkcji]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[targetWiekowy]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="targetWiekowy"
+                      externalMetadataColumnId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[targetWiekowy]"
+                      lineageId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[targetWiekowy]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[dataRozpoczecia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataRozpoczecia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[dataZakonczenia]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataZakonczenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[formaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[idAkcjiT]"
+                      dataType="i4"
+                      name="idAkcjiT" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[lokalizacjaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="lokalizacjaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[nazwaAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="25"
+                      name="nazwaAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[opisAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="opisAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[rodzajAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="rodzajAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[sponsorzy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sponsorzy" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[statusAkcji]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="statusAkcji" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[targetWiekowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="targetWiekowy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Ładowanie dimUczestnik DW.Paths[Changing Attribute Updates Output]"
+              endId="Package\Ładowanie dimUczestnik DW\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Ładowanie dimUczestnik DW.Paths[New Output]"
+              endId="Package\Ładowanie dimUczestnik DW\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Ładowanie dimUczestnik DW.Paths[OLE DB Source Output]"
+              endId="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\Ładowanie dimUczestnik DW\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\Ładowanie dimUczestnik DW"
+          TopLeft="153.12499771826,104.000001957542" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Ładowanie dimUczestnik DW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Ładowanie dimUczestnik DW\OLE DB Source"
+          TopLeft="236.5,5.50000000000004" />
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension"
+          TopLeft="207.833333333333,108.166666666667" />
+        <EdgeLayout
+          Id="Package\Ładowanie dimUczestnik DW.Paths[OLE DB Source Output]"
+          TopLeft="313.833333333333,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Ładowanie dimUczestnik DW\Insert Destination"
+          TopLeft="5.50000000000004,210.833333333334" />
+        <EdgeLayout
+          Id="Package\Ładowanie dimUczestnik DW.Paths[New Output]"
+          TopLeft="279.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-193,60.0000000000001"
+              Start="0,0"
+              End="-193,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2696629213483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2696629213483"
+                    Point2="0,24.2696629213483"
+                    Point3="-4,24.2696629213483" />
+                  <mssgle:LineSegment
+                    End="-189,24.2696629213483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-189,24.2696629213483"
+                    Point2="-193,24.2696629213483"
+                    Point3="-193,28.2696629213483" />
+                  <mssgle:LineSegment
+                    End="-193,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.59138671875,29.2696629213483,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Ładowanie dimUczestnik DW\OLE DB Command"
+          TopLeft="228.5,210.833333333334" />
+        <EdgeLayout
+          Id="Package\Ładowanie dimUczestnik DW.Paths[Changing Attribute Updates Output]"
+          TopLeft="347.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34,60.0000000000001"
+              Start="0,0"
+              End="-34,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2696629213483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2696629213483"
+                    Point2="0,24.2696629213483"
+                    Point3="-4,24.2696629213483" />
+                  <mssgle:LineSegment
+                    End="-30,24.2696629213483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30,24.2696629213483"
+                    Point2="-34,24.2696629213483"
+                    Point3="-34,28.2696629213483" />
+                  <mssgle:LineSegment
+                    End="-34,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.53390625,29.2696629213483,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ładowanie dimUczestnik DW\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ładowanie dimUczestnik DW\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{EDD24B8C-67D5-4EE2-85A8-E467DEE7FC49}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dimAkcja]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[dataRozpoczecia]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;dataRozpoczecia&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakonczenia]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;dataZakonczenia&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[formaAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;formaAkcji&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[idAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;idAkcjiT&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[lokalizacjaAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;lokalizacjaAkcji&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;nazwaAkcji&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[opisAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;opisAkcji&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[rodzajAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;rodzajAkcji&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[sponsorzy]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;sponsorzy&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[statusAkcji]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;statusAkcji&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[targetWiekowy]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;targetWiekowy&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

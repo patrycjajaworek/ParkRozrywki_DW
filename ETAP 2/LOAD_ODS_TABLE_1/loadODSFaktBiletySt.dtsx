@@ -1,0 +1,703 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/14/2024 1:03:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-424JPPL"
+  DTS:CreatorName="DESKTOP-424JPPL\damia"
+  DTS:DTSID="{061EC72B-5291-49D7-AE1D-CF3898EC1F37}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="loadODSFaktBiletySt"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8A49E921-548B-486C-BFCD-2AA0B953D780}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C2A40C2E-7C11-481E-A27C-445F524ADBFA}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-loadODSFaktBiletySt-{C2A40C2E-7C11-481E-A27C-445F524ADBFA}194.29.170.4.ABD_GR06_ODS.ABDGR06;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvkNusMFOCEamRY/GnMRQZwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD4dpYYR5mpKF2uWWuURAP3agGSa8TrbOZTYadH9dJTxAAAAAAOgAAAAAIAACAAAABksNrgPngImuF+akWdMOTsW7YkkmlJCI/yxS41TzDhmhAAAADwUMAepn1C4jaYmzEdPPjEQAAAADRITsrSi2K978G5DHqoF74+4+38Af+K0T5ylUsw0ZY/9jSyFIEkSnetB9Xvc75lYOH7EJbA0qYq/prcdzldf9E</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC1.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E5A4D5B-207D-4278-AD1E-D2BA93E7C4AE}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_SRC1.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_SRC1;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-loadODSFaktBiletySt-{8E5A4D5B-207D-4278-AD1E-D2BA93E7C4AE}194.29.170.4.ABD_GR06_SRC1.ABDGR06;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvkNusMFOCEamRY/GnMRQZwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB4XNGa9RvjKXXT5Grs6fi3g0YLVyu72U6zLVSNKkuSUwAAAAAOgAAAAAIAACAAAABOfhBrjqHzfsKeBvbl3gn3ZzSSbCmSY5Zk3pan9SbGEBAAAACNJaZZGMXEdFtKoy4FYxg2QAAAABzx9PXonX/UErAWX6xrECj3IyT5TgsNK9fagUxfvBCxDFg+O4+CIGruLg95DmpVusUn3HBFx1l9VtBUJFo1Ikk</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{042C73EF-053F-4CA4-B332-BB96E441B690}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Table Bilety"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Table Bilety"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    ROW_NUMBER() OVER(ORDER BY b.idBiletu) AS NumerRekordu,
+    b.*, 
+    a.Nr_atrakcji AS idAtrakcji
+FROM 
+    AtrakcjeBilety ba
+INNER JOIN 
+    Bilety b ON b.idBiletu = ba.idBiletu
+INNER JOIN 
+    Atrakcje a ON a.Nr_atrakcji = ba.Nr_atrakcji
+WHERE 
+    b.dataModyfikacji &gt;= DATEADD(day, -1, CAST(CURRENT_TIMESTAMP AS DATE));</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Table Bilety.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC1.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_SRC1.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[idBiletu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[idBiletu]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[idBiletu]"
+                      name="idBiletu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[cena]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[cena]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[cena]"
+                      name="cena"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataWaznosci]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataWaznosci]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataWaznosci]"
+                      name="dataWaznosci"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataZakupu]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataZakupu]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataZakupu]"
+                      name="dataZakupu"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[czyZakupionyStacjonarnie]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[czyZakupionyStacjonarnie]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[czyZakupionyStacjonarnie]"
+                      name="czyZakupionyStacjonarnie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[czyWykorzystany]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[czyWykorzystany]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[czyWykorzystany]"
+                      name="czyWykorzystany"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[Nr_klienta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[Nr_klienta]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[Nr_klienta]"
+                      name="Nr_klienta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[idAtrakcji]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[idAtrakcji]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[idAtrakcji]"
+                      name="idAtrakcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[NumerRekordu]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[NumerRekordu]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[NumerRekordu]"
+                      name="NumerRekordu"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[idBiletu]"
+                      dataType="i4"
+                      name="idBiletu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[cena]"
+                      dataType="numeric"
+                      name="cena"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataWaznosci]"
+                      dataType="dbTimeStamp2"
+                      name="dataWaznosci"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataZakupu]"
+                      dataType="dbTimeStamp2"
+                      name="dataZakupu"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[czyZakupionyStacjonarnie]"
+                      dataType="bool"
+                      name="czyZakupionyStacjonarnie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[czyWykorzystany]"
+                      dataType="bool"
+                      name="czyWykorzystany" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[Nr_klienta]"
+                      dataType="i4"
+                      name="Nr_klienta" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[idAtrakcji]"
+                      dataType="i4"
+                      name="idAtrakcji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].ExternalColumns[NumerRekordu]"
+                      dataType="i8"
+                      name="NumerRekordu" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[NumerRekordu]"
+                      dataType="i8"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[NumerRekordu]"
+                      name="NumerRekordu" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[idBiletu]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[idBiletu]"
+                      name="idBiletu" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[cena]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[cena]"
+                      name="cena"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataWaznosci]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataWaznosci]"
+                      name="dataWaznosci"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataZakupu]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataZakupu]"
+                      name="dataZakupu"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[czyZakupionyStacjonarnie]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[czyZakupionyStacjonarnie]"
+                      name="czyZakupionyStacjonarnie" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[czyWykorzystany]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[czyWykorzystany]"
+                      name="czyWykorzystany" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[Nr_klienta]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[Nr_klienta]"
+                      name="Nr_klienta" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[idAtrakcji]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[idAtrakcji]"
+                      name="idAtrakcji" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Table FaktBiletySt"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Table FaktBiletySt"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FaktBiletySt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Table FaktBiletySt.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].Columns[cena]"
+                      cachedDataType="numeric"
+                      cachedName="cena"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[cena]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[cena]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].Columns[dataZakupu]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="dataZakupu"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[dataZakupu]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[dataZakupu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].Columns[idAtrakcji]"
+                      cachedDataType="i4"
+                      cachedName="idAtrakcji"
+                      externalMetadataColumnId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idAtrakcji]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[idAtrakcji]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].Columns[Nr_klienta]"
+                      cachedDataType="i4"
+                      cachedName="Nr_klienta"
+                      externalMetadataColumnId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idKlienta]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[Nr_klienta]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].Columns[idBiletu]"
+                      cachedDataType="i4"
+                      cachedName="idBiletu"
+                      externalMetadataColumnId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idBiletuT]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[idBiletu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].Columns[NumerRekordu]"
+                      cachedDataType="i8"
+                      cachedName="NumerRekordu"
+                      externalMetadataColumnId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idBiletu]"
+                      lineageId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output].Columns[NumerRekordu]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idBiletu]"
+                      dataType="i4"
+                      name="idBiletu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[cena]"
+                      dataType="numeric"
+                      name="cena"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[dataZakupu]"
+                      dataType="dbDate"
+                      name="dataZakupu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idKlienta]"
+                      dataType="i4"
+                      name="idKlienta" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idAtrakcji]"
+                      dataType="i4"
+                      name="idAtrakcji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input].ExternalColumns[idBiletuT]"
+                      dataType="i4"
+                      name="idBiletuT" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Table FaktBiletySt.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table FaktBiletySt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Table FaktBiletySt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Table FaktBiletySt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Table FaktBiletySt.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Table Bilety.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Wyczyc table FaktBiletySt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ABA4BE95-851F-454B-982A-8522D03D45DB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Wyczyc table FaktBiletySt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C2A40C2E-7C11-481E-A27C-445F524ADBFA}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE FaktBiletySt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{33DEA43C-DD30-4F4D-B883-99D673034F05}"
+      DTS:From="Package\Wyczyc table FaktBiletySt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="235,84" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Wyczyc table FaktBiletySt"
+          TopLeft="216,5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="315.5,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Data Flow Task\Table FaktBiletySt"
+          TopLeft="182,214" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Data Flow Task\Table Bilety"
+          TopLeft="182,91" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="250.5,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,81"
+              Start="0,0"
+              End="15.5,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="4,40.5" />
+                  <mssgle:LineSegment
+                    End="11.5,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,40.5"
+                    Point2="15.5,40.5"
+                    Point3="15.5,44.5" />
+                  <mssgle:LineSegment
+                    End="15.5,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Table Bilety">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Table FaktBiletySt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

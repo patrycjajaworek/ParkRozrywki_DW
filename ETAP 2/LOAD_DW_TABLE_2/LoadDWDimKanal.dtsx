@@ -1,0 +1,1364 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/12/2024 2:48:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ODCCL04"
+  DTS:CreatorName="DESKTOP-ODCCL04\sandr"
+  DTS:DTSID="{5F426E9B-FB89-4E17-9E21-F54F802A37F9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{1FAD0C95-4CB9-4B6F-9A82-FD54DF33125A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7695A289-843E-438F-BB30-9B5584C9B7C4}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR06 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{7695A289-843E-438F-BB30-9B5584C9B7C4}194.29.170.4.ABD_GR06_ODS.ABDGR06 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEgGf1d66Ik6PY0BYlpzu4AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAFlr1ZOKs/FVV3lbv2SQdhmsAeUz9FvpviPD8KAzY6xwAAAAAOgAAAAAIAACAAAAB743BcxjH8+70u/RJOfn0y/7YUbjB3lFr2L/1023L0jBAAAAAwMA/5AtPSLVRdxSAxjMVcQAAAAJY/lzb5XpV9baFUKzEUs4bBviYzvoWyD05rMUaaRYWzw2HF1z47yviQimWBZ1+3vLBbwAZ3oH8r3ai8b2FBcLM</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR061]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B5FA8E53-5641-4A9E-ADE7-15D9B159FD26}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR061">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{B5FA8E53-5641-4A9E-ADE7-15D9B159FD26}194.29.170.4.ABD_GR06_ODS.ABDGR061;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEgGf1d66Ik6PY0BYlpzu4AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAF+cv/vRWG2WX3eZRg9E944WMlifLaFMViGb0XcaQXPwAAAAAOgAAAAAIAACAAAABANV/kZmceoqD5g2pYwVkHEFAuyW6ImNdQkSjFFAjOgxAAAAAO95biLIDy5Uc+/LsV9lilQAAAAB9Tgx/SRsPhvZskBp1uTiuSu5X543INKCQy1qqczhwfAmjx/DPG3XCv0CVBLITPTO0mFYmRQGZpLUFl8kFW7bc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Ładowanie tabeli DW dimKanlu"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F2EE2BDE-59D2-4C4F-B09A-CA144670B529}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ładowanie tabeli DW dimKanlu"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimKanluSt"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimKanalSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[idKanalu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[idKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[idKanalu]"
+                      name="idKanalu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[typKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[typKanalu]"
+                      length="20"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[typKanalu]"
+                      name="typKanalu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[opisKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[opisKanalu]"
+                      length="150"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[opisKanalu]"
+                      name="opisKanalu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzeniaKanlu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzeniaKanlu]"
+                      length="10"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzeniaKanlu]"
+                      name="dataUtworzeniaKanlu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[liczbaOdbiorcow]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[liczbaOdbiorcow]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[liczbaOdbiorcow]"
+                      name="liczbaOdbiorcow"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[kosztKanalu]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[kosztKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[kosztKanalu]"
+                      name="kosztKanalu"
+                      precision="20"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[formaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[formaKanalu]"
+                      length="20"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[formaKanalu]"
+                      name="formaKanalu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[nazwaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[nazwaKanalu]"
+                      length="20"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[nazwaKanalu]"
+                      name="nazwaKanalu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[idKanalu]"
+                      dataType="i4"
+                      name="idKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[typKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="typKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[opisKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="opisKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzeniaKanlu]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataUtworzeniaKanlu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[liczbaOdbiorcow]"
+                      dataType="i4"
+                      name="liczbaOdbiorcow" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[kosztKanalu]"
+                      dataType="numeric"
+                      name="kosztKanalu"
+                      precision="20"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[formaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[nazwaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="nazwaKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[idKanalu]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[idKanalu]"
+                      name="idKanalu" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[typKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[typKanalu]"
+                      name="typKanalu" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[opisKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[opisKanalu]"
+                      name="opisKanalu" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[dataUtworzeniaKanlu]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[dataUtworzeniaKanlu]"
+                      name="dataUtworzeniaKanlu" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[liczbaOdbiorcow]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[liczbaOdbiorcow]"
+                      name="liczbaOdbiorcow" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[kosztKanalu]"
+                      dataType="numeric"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[kosztKanalu]"
+                      name="kosztKanalu"
+                      precision="20"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[formaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[formaKanalu]"
+                      name="formaKanalu" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[nazwaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[nazwaKanalu]"
+                      name="nazwaKanalu" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[dataModyfikacji]"
+                      name="dataModyfikacji" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimKanal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{B7C702C1-BB0B-4B0E-8880-533777FFBF70}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[idKanalu]"
+                      cachedDataType="i4"
+                      cachedName="idKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdKanaluT]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[idKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[typKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="typKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[typKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[typKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[opisKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="opisKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[opisKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[opisKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[dataUtworzeniaKanlu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataUtworzeniaKanlu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzeniaKanlu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzeniaKanlu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[liczbaOdbiorcow]"
+                      cachedDataType="i4"
+                      cachedName="liczbaOdbiorcow"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[liczbaOdbiorcow]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[liczbaOdbiorcow]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[kosztKanalu]"
+                      cachedDataType="numeric"
+                      cachedName="kosztKanalu"
+                      cachedPrecision="20"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[kosztKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[kosztKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[formaKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[formaKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[formaKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].Columns[nazwaKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="nazwaKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[nazwaKanalu]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[idKanalu]"
+                      dataType="i4"
+                      name="idKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdKanaluT]"
+                      dataType="i4"
+                      name="IdKanaluT" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[typKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="typKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[opisKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="opisKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzeniaKanlu]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataUtworzeniaKanlu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[liczbaOdbiorcow]"
+                      dataType="i4"
+                      name="liczbaOdbiorcow" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[kosztKanalu]"
+                      dataType="numeric"
+                      name="kosztKanalu"
+                      precision="20"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[formaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="nazwaKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataModyfikacji]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacji" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[dimKanal] SET [dataUtworzeniaKanlu] = ?,[formaKanalu] = ?,[kosztKanalu] = ?,[liczbaOdbiorcow] = ?,[nazwaKanalu] = ?,[opisKanalu] = ?,[typKanalu] = ? WHERE [IdKanaluT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{B7C702C1-BB0B-4B0E-8880-533777FFBF70}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[dataUtworzeniaKanlu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataUtworzeniaKanlu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzeniaKanlu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[formaKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[formaKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[idKanalu]"
+                      cachedDataType="i4"
+                      cachedName="idKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[idKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[kosztKanalu]"
+                      cachedDataType="numeric"
+                      cachedName="kosztKanalu"
+                      cachedPrecision="20"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[kosztKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[liczbaOdbiorcow]"
+                      cachedDataType="i4"
+                      cachedName="liczbaOdbiorcow"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[liczbaOdbiorcow]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[nazwaKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="nazwaKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[nazwaKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[opisKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="opisKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[opisKanalu]" />
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].Columns[typKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="typKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[typKanalu]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="numeric"
+                      name="Param_2"
+                      precision="20"
+                      scale="6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [dataUtworzeniaKanlu], [formaKanalu], [IdKanaluT], [kosztKanalu], [liczbaOdbiorcow], [nazwaKanalu], [opisKanalu], [typKanalu] FROM [dbo].[dimKanal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{B7C702C1-BB0B-4B0E-8880-533777FFBF70}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[dataUtworzeniaKanlu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="dataUtworzeniaKanlu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[dataUtworzeniaKanlu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzeniaKanlu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[formaKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="formaKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[formaKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[formaKanalu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[idKanalu]"
+                      cachedDataType="i4"
+                      cachedName="idKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IdKanaluT]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[idKanalu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[kosztKanalu]"
+                      cachedDataType="numeric"
+                      cachedName="kosztKanalu"
+                      cachedPrecision="20"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[kosztKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[kosztKanalu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[liczbaOdbiorcow]"
+                      cachedDataType="i4"
+                      cachedName="liczbaOdbiorcow"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[liczbaOdbiorcow]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[liczbaOdbiorcow]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[nazwaKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="nazwaKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[nazwaKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[nazwaKanalu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[opisKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="opisKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[opisKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[opisKanalu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[typKanalu]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="typKanalu"
+                      externalMetadataColumnId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[typKanalu]"
+                      lineageId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output].Columns[typKanalu]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[dataUtworzeniaKanlu]"
+                      dataType="wstr"
+                      length="10"
+                      name="dataUtworzeniaKanlu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[formaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="formaKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IdKanaluT]"
+                      dataType="i4"
+                      name="IdKanaluT" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[kosztKanalu]"
+                      dataType="numeric"
+                      name="kosztKanalu"
+                      precision="20"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[liczbaOdbiorcow]"
+                      dataType="i4"
+                      name="liczbaOdbiorcow" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[nazwaKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="nazwaKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[opisKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="opisKanalu" />
+                    <externalMetadataColumn
+                      refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[typKanalu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="typKanalu" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Ładowanie tabeli DW dimKanlu.Paths[Changing Attribute Updates Output]"
+              endId="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Ładowanie tabeli DW dimKanlu.Paths[New Output]"
+              endId="Package\Ładowanie tabeli DW dimKanlu\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Ładowanie tabeli DW dimKanlu.Paths[OLE DB Source Output]"
+              endId="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="228,42.6666666666667"
+          Id="Package\Ładowanie tabeli DW dimKanlu"
+          TopLeft="129.374998072162,36.9473691164952" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Ładowanie tabeli DW dimKanlu">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,42.6666666666667"
+          Id="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt"
+          TopLeft="245.833333333333,5.49999999999993" />
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension"
+          TopLeft="207.833333333333,108.166666666667" />
+        <EdgeLayout
+          Id="Package\Ładowanie tabeli DW dimKanlu.Paths[OLE DB Source Output]"
+          TopLeft="313.833333333333,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Ładowanie tabeli DW dimKanlu\Insert Destination"
+          TopLeft="148.5,247.833333333333" />
+        <EdgeLayout
+          Id="Package\Ładowanie tabeli DW dimKanlu.Paths[New Output]"
+          TopLeft="279.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-49.9999999999999,97"
+              Start="0,0"
+              End="-49.9999999999999,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2359550561798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.2359550561798"
+                    Point2="0,39.2359550561798"
+                    Point3="-4,39.2359550561798" />
+                  <mssgle:LineSegment
+                    End="-45.9999999999999,39.2359550561798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-45.9999999999999,39.2359550561798"
+                    Point2="-49.9999999999999,39.2359550561798"
+                    Point3="-49.9999999999999,43.2359550561798" />
+                  <mssgle:LineSegment
+                    End="-49.9999999999999,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.09138671875,44.2359550561798,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Ładowanie tabeli DW dimKanlu\OLE DB Command"
+          TopLeft="352.5,246.833333333333" />
+        <EdgeLayout
+          Id="Package\Ładowanie tabeli DW dimKanlu.Paths[Changing Attribute Updates Output]"
+          TopLeft="347.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90,96.0000000000001"
+              Start="0,0"
+              End="90,88.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8314606741573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.8314606741573"
+                    Point2="0,38.8314606741573"
+                    Point3="4,38.8314606741573" />
+                  <mssgle:LineSegment
+                    End="86,38.8314606741573" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86,38.8314606741573"
+                    Point2="90,38.8314606741573"
+                    Point3="90,42.8314606741573" />
+                  <mssgle:LineSegment
+                    End="90,88.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.53390625,43.8314606741573,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ładowanie tabeli DW dimKanlu\DimKanluSt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ładowanie tabeli DW dimKanlu\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{B7C702C1-BB0B-4B0E-8880-533777FFBF70}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dimKanal]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[dataUtworzeniaKanlu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;dataUtworzeniaKanlu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[formaKanalu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;formaKanalu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[idKanalu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;IdKanaluT&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[kosztKanalu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;kosztKanalu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[liczbaOdbiorcow]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;liczbaOdbiorcow&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[nazwaKanalu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;nazwaKanalu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[opisKanalu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;opisKanalu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimKanluSt.Outputs[OLE DB Source Output].Columns[typKanalu]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;typKanalu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ładowanie tabeli DW dimKanlu\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

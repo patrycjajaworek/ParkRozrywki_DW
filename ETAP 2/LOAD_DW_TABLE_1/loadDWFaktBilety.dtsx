@@ -1,0 +1,932 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/14/2024 12:51:33 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-424JPPL"
+  DTS:CreatorName="DESKTOP-424JPPL\damia"
+  DTS:DTSID="{6078FEB7-936E-44B8-B373-6A1653AB3F02}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="loadDWFaktBilety"
+  DTS:PackageType="5"
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{08844E0A-54AA-4122-A67F-FDFAACBE3E58}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F41A23D6-C7B3-4FE3-BBC3-52730AB674D0}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_DW.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_DW;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-kiadDWFaktBilety-{F41A23D6-C7B3-4FE3-BBC3-52730AB674D0}194.29.170.4.ABD_GR06_DW.ABDGR06;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvkNusMFOCEamRY/GnMRQZwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACxw252d4yFeQJ63NI1OaFBHJBMxuazvvMdE3TtGpu1FgAAAAAOgAAAAAIAACAAAADVHGo46/XYXkOsI7vAbGaQRe3Cg4EHIJYdBMw/q+oJyhAAAAABC87mGg/upUZNgCrIQlkOQAAAAPjJ7z1KhbMJ7whJO6p9/tCP6mEun9VGrZn+a/RP6nihRoTKPhlns04nhR6/Pv8Wuijn75Y2ehYNNlwsyRrn/ac</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A195D6C5-94CC-4DB6-9317-5C48E37FE2F9}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR06">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-kiadDWFaktBilety-{A195D6C5-94CC-4DB6-9317-5C48E37FE2F9}194.29.170.4.ABD_GR06_ODS.ABDGR06;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvkNusMFOCEamRY/GnMRQZwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABAFV944srArfDdGO2W40fHtaSuemsmlfEA4AVE9qg8egAAAAAOgAAAAAIAACAAAADNvmv04ZRufBdcgDPAC0ZYqZ7TMidGtvq4+fGIR9F6XxAAAABJWDFNzH+5Us01Z8wOnIEoQAAAAOjYI98V1eHZGUJPVyHmE9+HOG7/rfUMhXZ7ZsFE9C8o33mocB7xIAU0hpatpPASmwPcRClMCf6xIUpV/6fysk8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ladowanie tabeli FaktBilety"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F08DEF92-FCFD-414C-8AAB-A04005B1597B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ladowanie tabeli FaktBilety"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="dimAtrakcje"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimAtrakcja]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimAtrakcja]) [refTable]
+where [refTable].[idAtrakcjiT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="idAtrakcji" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="idAtrakcjiT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nazwaAtrakcji" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="dlugoscTrasy" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nazwaParku" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="dataUtworzenia" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dataModyfikacji" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAtrakcji]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Inputs[Lookup Input].Columns[idAtrakcji]"
+                      cachedDataType="i4"
+                      cachedName="idAtrakcji"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAtrakcji]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">idAtrakcjiT</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Match Output].Columns[idAtrakcji]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Match Output].Columns[idAtrakcji]"
+                      name="idAtrakcji"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">idAtrakcji</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ladowanie tabeli FaktBilety\dimCzas"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="dimCzas"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dimCzas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dimCzas]) [refTable]
+where [refTable].[data] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="idCzasu" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="miesiac" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="kwartal" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="rok" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dzienTygodnia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dzienMiesiaca" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nazwaDniaTygodniaPol" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="nazwaDniaTygodniaAng" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="nazwaMiesiacaPol" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="nazwaMiesiacaAng" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="dataUtworzenia" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dataModyfikacja" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakupu]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ladowanie tabeli FaktBilety\dimCzas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ladowanie tabeli FaktBilety\dimCzas.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimCzas.Inputs[Lookup Input].Columns[dataZakupu]"
+                      cachedDataType="dbDate"
+                      cachedName="dataZakupu"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakupu]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">data</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\dimCzas.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Match Output].Columns[idCzasu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Match Output].Columns[idCzasu]"
+                      name="idCzasu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">idCzasu</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\dimCzas.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\dimCzas.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FaktBilety]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idCzasu]"
+                      cachedDataType="i4"
+                      cachedName="idCzasu"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idCzasu]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Match Output].Columns[idCzasu]" />
+                    <inputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cenaSum]"
+                      cachedDataType="numeric"
+                      cachedName="cenaSum"
+                      cachedPrecision="38"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[koszt]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[cenaSum]" />
+                    <inputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[liczbaBiletówNaAtrakcje]"
+                      cachedDataType="i4"
+                      cachedName="liczbaBiletówNaAtrakcje"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[liczbaBiletówNaAtrakcje]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[liczbaBiletówNaAtrakcje]" />
+                    <inputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idAtrakcji]"
+                      cachedDataType="i4"
+                      cachedName="idAtrakcji"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idAtrakcji]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAtrakcji]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idCzasu]"
+                      dataType="i4"
+                      name="idCzasu" />
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idAtrakcji]"
+                      dataType="i4"
+                      name="idAtrakcji" />
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[koszt]"
+                      dataType="cy"
+                      name="koszt" />
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[liczbaBiletówNaAtrakcje]"
+                      dataType="i4"
+                      name="liczbaBiletówNaAtrakcje" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ladowanie tabeli FaktBilety\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FaktBiletySt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    idAtrakcji,
+	SUM(cena) as cenaSum,
+    COUNT(*) AS liczbaBiletówNaAtrakcje,
+	dataZakupu
+FROM 
+    [ABD_GR06_ODS].[dbo].[FaktBiletySt]
+GROUP BY 
+    idAtrakcji, dataZakupu</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAtrakcji]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idAtrakcji]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[idAtrakcji]"
+                      name="idAtrakcji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[cenaSum]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cenaSum]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[cenaSum]"
+                      name="cenaSum"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[liczbaBiletówNaAtrakcje]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[liczbaBiletówNaAtrakcje]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[liczbaBiletówNaAtrakcje]"
+                      name="liczbaBiletówNaAtrakcje"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakupu]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataZakupu]"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataZakupu]"
+                      name="dataZakupu"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idAtrakcji]"
+                      dataType="i4"
+                      name="idAtrakcji" />
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cenaSum]"
+                      dataType="numeric"
+                      name="cenaSum"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[liczbaBiletówNaAtrakcje]"
+                      dataType="i4"
+                      name="liczbaBiletówNaAtrakcje" />
+                    <externalMetadataColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataZakupu]"
+                      dataType="dbDate"
+                      name="dataZakupu" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idAtrakcji]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idAtrakcji]"
+                      name="idAtrakcji" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cenaSum]"
+                      dataType="numeric"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cenaSum]"
+                      name="cenaSum"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[liczbaBiletówNaAtrakcje]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[liczbaBiletówNaAtrakcje]"
+                      name="liczbaBiletówNaAtrakcje" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataZakupu]"
+                      dataType="dbDate"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataZakupu]"
+                      name="dataZakupu" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ladowanie tabeli FaktBilety.Paths[Lookup Match Output]"
+              endId="Package\ladowanie tabeli FaktBilety\dimCzas.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ladowanie tabeli FaktBilety.Paths[Lookup Match Output1]"
+              endId="Package\ladowanie tabeli FaktBilety\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\ladowanie tabeli FaktBilety\dimCzas.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ladowanie tabeli FaktBilety.Paths[OLE DB Source Output]"
+              endId="Package\ladowanie tabeli FaktBilety\dimAtrakcje.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\ladowanie tabeli FaktBilety\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="209,42"
+          Id="Package\ladowanie tabeli FaktBilety"
+          TopLeft="234,69" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ladowanie tabeli FaktBilety">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="122,42"
+          Id="Package\ladowanie tabeli FaktBilety\dimCzas"
+          TopLeft="255,221" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\ladowanie tabeli FaktBilety\dimAtrakcje"
+          TopLeft="250,103" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\ladowanie tabeli FaktBilety\OLE DB Source"
+          TopLeft="229,22" />
+        <EdgeLayout
+          Id="Package\ladowanie tabeli FaktBilety.Paths[Lookup Match Output]"
+          TopLeft="317.25,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,28.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ladowanie tabeli FaktBilety.Paths[OLE DB Source Output]"
+          TopLeft="307.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11,39"
+              Start="0,0"
+              End="11,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="7,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,19.5"
+                    Point2="11,19.5"
+                    Point3="11,23.5" />
+                  <mssgle:LineSegment
+                    End="11,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\ladowanie tabeli FaktBilety\OLE DB Destination"
+          TopLeft="230,344" />
+        <EdgeLayout
+          Id="Package\ladowanie tabeli FaktBilety.Paths[Lookup Match Output1]"
+          TopLeft="317.25,263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,30.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text=""
+          ParentId="Package\ladowanie tabeli FaktBilety"
+          FontInfo="{assembly:Null}"
+          Size="29,60"
+          Id="a937de71-591c-449c-aa13-e290b0cd8877"
+          TopLeft="419,269" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ladowanie tabeli FaktBilety\dimCzas">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimCzas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ladowanie tabeli FaktBilety\dimAtrakcje">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dimAtrakcja]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ladowanie tabeli FaktBilety\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ladowanie tabeli FaktBilety\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

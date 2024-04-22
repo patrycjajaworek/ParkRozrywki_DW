@@ -1,0 +1,761 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/10/2024 5:01:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ODCCL04"
+  DTS:CreatorName="DESKTOP-ODCCL04\sandr"
+  DTS:DTSID="{4735A54A-F56B-4238-ADE3-DA1CDE7D231F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{1031E601-9A1B-4931-A5B2-382EE0BBE0DF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{984A5607-7F25-403E-92AF-FA29E4ADB8F8}"
+      DTS:ObjectName="194.29.170.4.ABD_GR06_ODS.ABDGR06 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR06;Initial Catalog=ABD_GR06_ODS;Provider=SQLOLEDB.1;Application Name=SSIS-Package-{984A5607-7F25-403E-92AF-FA29E4ADB8F8}194.29.170.4.ABD_GR06_ODS.ABDGR06 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEgGf1d66Ik6PY0BYlpzu4AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABTq2I0ZzNvAlE+D6/s0w74VAwhD74efMW7iuAs2NBHMwAAAAAOgAAAAAIAACAAAADiljSuVOBQxU/Vm30kPIeIjLs+1xo3K5IUnW0ui2PXxBAAAAAXjmYKMgQKzQognKdhNn72QAAAAEQiy9Ifue8jJj0J9bEVdKcF4LA+QEsfIqp3I10lk3l2fzo3l57WiJkAxR+a/DIWbKtd61LtZex2T9PWx6SDasI</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ładowanie tabeli wymiaru DomCzas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5D662595-9AB6-4B76-BCD8-36DA15FE3D22}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ładowanie tabeli wymiaru DomCzas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimCzas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{EDD24B8C-67D5-4EE2-85A8-E467DEE7FC49}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR06_DW.ABDGR06]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idCzasu]"
+                      cachedDataType="i4"
+                      cachedName="idCzasu"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idCzasu]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[idCzasu]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[data]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="data"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[data]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[miesiac]"
+                      cachedDataType="i2"
+                      cachedName="miesiac"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[miesiac]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[miesiac]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[kwartal]"
+                      cachedDataType="i2"
+                      cachedName="kwartal"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kwartal]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[kwartal]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rok]"
+                      cachedDataType="i4"
+                      cachedName="rok"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rok]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[rok]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dzienTygodnia]"
+                      cachedDataType="i2"
+                      cachedName="dzienTygodnia"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dzienTygodnia]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzienTygodnia]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dzienMiesiaca]"
+                      cachedDataType="i2"
+                      cachedName="dzienMiesiaca"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dzienMiesiaca]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzienMiesiaca]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nazwaDniaTygodniaPol]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="nazwaDniaTygodniaPol"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaDniaTygodniaPol]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaDniaTygodniaPol]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nazwaDniaTygodniaAng]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="nazwaDniaTygodniaAng"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaDniaTygodniaAng]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaDniaTygodniaAng]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nazwaMiesiacaPol]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="nazwaMiesiacaPol"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaMiesiacaPol]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaMiesiacaPol]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nazwaMiesiacaAng]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="nazwaMiesiacaAng"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaMiesiacaAng]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaMiesiacaAng]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dataUtworzenia]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dataUtworzenia"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataUtworzenia]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[dataModyfikacja]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dataModyfikacja"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataModyfikacja]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataModyfikacja]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idCzasu]"
+                      dataType="i4"
+                      name="idCzasu" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                      dataType="wstr"
+                      length="10"
+                      name="data" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[miesiac]"
+                      dataType="i2"
+                      name="miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[kwartal]"
+                      dataType="i2"
+                      name="kwartal" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rok]"
+                      dataType="i4"
+                      name="rok" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dzienTygodnia]"
+                      dataType="i2"
+                      name="dzienTygodnia" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dzienMiesiaca]"
+                      dataType="i2"
+                      name="dzienMiesiaca" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaDniaTygodniaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaDniaTygodniaPol" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaDniaTygodniaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaDniaTygodniaAng" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaMiesiacaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaMiesiacaPol" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nazwaMiesiacaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaMiesiacaAng" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dataModyfikacja]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacja" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dimCzasSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[194.29.170.4.ABD_GR06_ODS.ABDGR06 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[idCzasu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idCzasu]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[idCzasu]"
+                      name="idCzasu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[data]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data]"
+                      length="10"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[data]"
+                      name="data"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[miesiac]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[miesiac]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[miesiac]"
+                      name="miesiac"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[kwartal]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kwartal]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[kwartal]"
+                      name="kwartal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[rok]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rok]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[rok]"
+                      name="rok"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzienTygodnia]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dzienTygodnia]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzienTygodnia]"
+                      name="dzienTygodnia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzienMiesiaca]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dzienMiesiaca]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dzienMiesiaca]"
+                      name="dzienMiesiaca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaDniaTygodniaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaDniaTygodniaPol]"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaDniaTygodniaPol]"
+                      name="nazwaDniaTygodniaPol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaDniaTygodniaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaDniaTygodniaAng]"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaDniaTygodniaAng]"
+                      name="nazwaDniaTygodniaAng"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaMiesiacaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaMiesiacaPol]"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaMiesiacaPol]"
+                      name="nazwaMiesiacaPol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaMiesiacaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaMiesiacaAng]"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[nazwaMiesiacaAng]"
+                      name="nazwaMiesiacaAng"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataModyfikacja]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacja]"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].Columns[dataModyfikacja]"
+                      name="dataModyfikacja"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idCzasu]"
+                      dataType="i4"
+                      name="idCzasu" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data]"
+                      dataType="wstr"
+                      length="10"
+                      name="data" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[miesiac]"
+                      dataType="i2"
+                      name="miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[kwartal]"
+                      dataType="i2"
+                      name="kwartal" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rok]"
+                      dataType="i4"
+                      name="rok" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dzienTygodnia]"
+                      dataType="i2"
+                      name="dzienTygodnia" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dzienMiesiaca]"
+                      dataType="i2"
+                      name="dzienMiesiaca" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaDniaTygodniaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaDniaTygodniaPol" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaDniaTygodniaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaDniaTygodniaAng" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaMiesiacaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaMiesiacaPol" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nazwaMiesiacaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      name="nazwaMiesiacaAng" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="dataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dataModyfikacja]"
+                      dataType="dbTimeStamp"
+                      name="dataModyfikacja" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idCzasu]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idCzasu]"
+                      name="idCzasu" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data]"
+                      name="data" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[miesiac]"
+                      dataType="i2"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[miesiac]"
+                      name="miesiac" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kwartal]"
+                      dataType="i2"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[kwartal]"
+                      name="kwartal" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rok]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rok]"
+                      name="rok" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dzienTygodnia]"
+                      dataType="i2"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dzienTygodnia]"
+                      name="dzienTygodnia" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dzienMiesiaca]"
+                      dataType="i2"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dzienMiesiaca]"
+                      name="dzienMiesiaca" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaDniaTygodniaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaDniaTygodniaPol]"
+                      name="nazwaDniaTygodniaPol" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaDniaTygodniaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaDniaTygodniaAng]"
+                      name="nazwaDniaTygodniaAng" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaMiesiacaPol]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaMiesiacaPol]"
+                      name="nazwaMiesiacaPol" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaMiesiacaAng]"
+                      codePage="1250"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nazwaMiesiacaAng]"
+                      name="nazwaMiesiacaAng" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataUtworzenia]"
+                      name="dataUtworzenia" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataModyfikacja]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dataModyfikacja]"
+                      name="dataModyfikacja" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ładowanie tabeli wymiaru DomCzas.Paths[OLE DB Source Output]"
+              endId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\ładowanie tabeli wymiaru DomCzas"
+          TopLeft="73.7499989010393,65.6842117626582" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ładowanie tabeli wymiaru DomCzas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source"
+          TopLeft="159.374997625127,67.7368433802412" />
+        <NodeLayout
+          Size="174.666666666667,42"
+          Id="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination"
+          TopLeft="168.124997494742,160.105266171479" />
+        <EdgeLayout
+          Id="Package\ładowanie tabeli wymiaru DomCzas.Paths[OLE DB Source Output]"
+          TopLeft="236.70833095846,110.403510046908">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7499998696153,49.7017561245713"
+              Start="0,0"
+              End="18.7499998696153,42.2017561245713">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8508780622857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.8508780622857"
+                    Point2="0,24.8508780622857"
+                    Point3="4,24.8508780622857" />
+                  <mssgle:LineSegment
+                    End="14.7499998696153,24.8508780622857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7499998696153,24.8508780622857"
+                    Point2="18.7499998696153,24.8508780622857"
+                    Point3="18.7499998696153,28.8508780622857" />
+                  <mssgle:LineSegment
+                    End="18.7499998696153,42.2017561245713" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wymiaru DomCzas\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

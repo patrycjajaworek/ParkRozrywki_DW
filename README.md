@@ -58,17 +58,17 @@ BAZA II
 #### ETAP III (15.04.2024 - 13.05.2024)
 - **Cel:** W trzecim etapie projektu należało zaprojektować i zbudować model OLAP w technologii SSAS Tabular, korzystając z danych przygotowanych wcześniej. Obejmowało to stworzenie struktury modelu, przygotowanie miar analitycznych oraz konfigurację zasilania danych.
 
-- **1. Główna idea etapu:** Celem było udostępnienie modelu tabelarycznego, który pozwala analizować dane dotyczące sprzedaży biletów oraz akcji marketingowych. Model miał odzwierciedlać strukturę hurtowni danych i umożliwiać wykonywanie typowych analiz biznesowych.
+- **Główna idea etapu:** Celem było udostępnienie modelu tabelarycznego, który pozwala analizować dane dotyczące sprzedaży biletów oraz akcji marketingowych. Model miał odzwierciedlać strukturę hurtowni danych i umożliwiać wykonywanie typowych analiz biznesowych.
 
-- **2. Model tabelaryczny – Fakt Bilety:** W tym module poprawiono wcześniejszy błąd i dołączono wymiar dimKlient. Zbudowano relacje między tabelami oraz utworzono miary takie jak: całkowity przychód, średni koszt biletu, liczba wejść, liczba unikalnych klientów, podział sprzedaży według płci czy średni wiek klientów.
+- **Model tabelaryczny – Fakt Bilety:** W tym module poprawiono wcześniejszy błąd i dołączono wymiar dimKlient. Zbudowano relacje między tabelami oraz utworzono miary takie jak: całkowity przychód, średni koszt biletu, liczba wejść, liczba unikalnych klientów, podział sprzedaży według płci czy średni wiek klientów.
 
-- **3. Perspektywy:** Utworzono perspektywę Marketing, zawężającą widok do danych dotyczących klientów, co ułatwia pracę analitykom.
+- **Perspektywy:** Utworzono perspektywę Marketing, zawężającą widok do danych dotyczących klientów, co ułatwia pracę analitykom.
 
-- **4. Model tabelaryczny – Fakt AkcjaMarketingowa:** Zbudowano model obejmujący koszty netto i brutto oraz liczbę uczestników akcji. Dodano perspektywę Uczestnik, skupiającą się na danych osobowych uczestników działań marketingowych.
+- **Model tabelaryczny – Fakt AkcjaMarketingowa:** Zbudowano model obejmujący koszty netto i brutto oraz liczbę uczestników akcji. Dodano perspektywę Uczestnik, skupiającą się na danych osobowych uczestników działań marketingowych.
 
-- **5. Raporty Excel:** Na podstawie modeli SSAS przygotowano zestaw analiz w formie tabel przestawnych, obejmujących m.in. przychody, pochodzenie klientów, popularność atrakcji, koszty kampanii i liczbę uczestników.
+- **Raporty Excel:** Na podstawie modeli SSAS przygotowano zestaw analiz w formie tabel przestawnych, obejmujących m.in. przychody, pochodzenie klientów, popularność atrakcji, koszty kampanii i liczbę uczestników.
 
-- **6. Mechanizm odświeżania:** Podjęto próbę stworzenia dziennego odświeżania modelu, jednak ze względu na brak danych w lokalnej bazie i ograniczenia serwerowe mechanizm nie został w pełni uruchomiony.
+- **Mechanizm odświeżania:** Podjęto próbę stworzenia dziennego odświeżania modelu, jednak ze względu na brak danych w lokalnej bazie i ograniczenia serwerowe mechanizm nie został w pełni uruchomiony.
 
 
 

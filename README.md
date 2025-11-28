@@ -76,7 +76,87 @@ BAZA II
 
 
 #### ETAP IV (13.05.2024 - 03.06.2024)
-- **Cel:** Dashboardy w narzędziu analizy Microsoft Power BI Desktop.
+
+- **Cel:** W tym etapie wykonano dashboardy w Power BI, korzystając z modelu SSAS Tabular. Raporty wizualizują sprzedaż biletów, koszty akcji marketingowych, lokalizacje wydarzeń oraz statystyki uczestników.
+
+---
+
+#### 1. Analiza kosztów akcji marketingowych
+
+- **Koszt netto według roku:**  
+  ![netto_year](images/netto_2023.jpg)  
+  Najwyższy koszt netto pojawił się w **2023 roku** — około **0,6 mln PLN**.
+
+- **Koszty według statusu akcji:**  
+  ![status_cost](images/lokalizacja_Park_rozrywki.jpg)  
+  Akcje zakończone generują znacznie wyższe koszty (**525 000 PLN netto**) niż aktywne (**85 000 PLN netto**).
+
+- **Lokalizacja „Karuzele”:**  
+  ![carousels](images/lokalizacja_karuzele.jpg)  
+  Koszt netto: **25 000 PLN**, uczestników: **37** — akcje tego typu są nierentowne.
+
+- **Podsumowanie kosztów całkowitych:**  
+  ![totals](images/kwoty_2023.jpg)  
+  Łącznie we wszystkich latach: **742 tys. PLN brutto**, **603 tys. PLN netto**, **138 tys. PLN podatku**.
+
+- **Koszty według lokalizacji (pełne zestawienie):**  
+  ![locations_all](images/koszt_akcji_lokalizacja_wszystkie_naraz.jpg)  
+  Najlepsze lokalizacje:  
+  - **Park Rozrywki** – 610 000 PLN netto, 244 uczestników  
+  - **Park przy lesie** – 287 220 PLN netto, 1056 uczestników
+
+---
+
+#### 2. Szczegółowa analiza roku 2023
+
+- **Dashboard ogólny:**  
+  ![2023_total](images/koszt_akcji_2023_calosc.jpg)  
+  W roku 2023 widoczny jest największy wzrost kosztów, szczególnie w październiku.
+
+- **Koszt netto według miesiąca:**  
+  ![2023_month_netto](images/koszt_akcji_2023_calosc.jpg)  
+  Największy koszt: **październik (~0,40 mln PLN)**.
+
+- **Koszt podatku według miesiąca:**  
+  ![2023_tax](images/akcje_calosc.jpg)  
+  Największa wartość podatku: **91 tys. PLN w październiku**.
+
+---
+
+#### 3. Popularność atrakcji
+
+- **Najchętniej wybierane atrakcje:**  
+  ![popularity](images/zainteresowanieK.png)  
+  Największym zainteresowaniem cieszą się:  
+  - Dmuchany Zamek  
+  - Symulator Lotu  
+  - Ekstremalny Zjazd
+
+---
+
+#### 4. Liczba uczestników akcji marketingowych
+
+- **Zestawienie miesięczne / kwartalne / roczne:**  
+  ![participants](images/uczestnicy_calosc.jpg)
+
+  - Najwięcej uczestników: **luty** i **grudzień**  
+  - Najsłabszy okres: **maj (<50 osób)**  
+  - Największy udział kwartalny: **IV kwartał (577 osób, 37%)**  
+  - Najwięcej uczestników łącznie: **rok 2022 (~1000)**  
+  - Lata 2023–2024 pokazują wyraźny spadek
+
+---
+
+#### 5. Najważniejsze wnioski
+
+- **Rok 2023 był najdroższy**, koszty marketingu ponad dwukrotnie wyższe niż w innych latach.  
+- **Październik** to miesiąc o najwyższych kosztach — kampanie sezonowe (np. Halloween).  
+- Najbardziej opłacalne lokalizacje akcji: **Park Rozrywki** i **Park przy lesie**.  
+- **Karuzele są nierentowne** — niskie uczestnictwo i mały zwrot kosztów.  
+- Uczestnictwo w akcjach **spada z roku na rok**, co wskazuje na nieskuteczną strategię marketingową.  
+- Największy ruch notowany jest zimą — **luty i grudzień**.
+
+
 
 ## Planowana Data Ukończenia Projektu: 03.06.2024
 
@@ -167,6 +247,83 @@ BASE II
 
 
 #### PHASE IV (13.05.2024 - 03.06.2024)
-- **Objective:** Dashboards in Microsoft Power BI Desktop analysis tool.
+- **Goal:** This stage focused on creating dashboards in Power BI based on the SSAS Tabular model. The reports visualize ticket sales, marketing action costs, locations, and participant statistics.
+
+---
+
+#### 1. Cost Analysis of Marketing Actions
+
+- **Net cost by year:**  
+  ![netto_year](images/netto_2023.jpg)  
+  The chart shows that 2023 reached the highest net cost, approx. 0.6 mln PLN.
+
+- **Cost by action status:**  
+  ![status_cost](images/lokalizacja_Park_rozrywki.jpg)  
+  Finished actions generated significantly higher costs (525 000 PLN net) than active ones (85 000 PLN).
+
+- **Specific location – Carousels:**  
+  ![carousels](images/lokalizacja_karuzele.jpg)  
+  Net cost: 25 000 PLN. Participants: 37. Not profitable.
+
+- **Total cost summary:**  
+  ![totals](images/kwoty_2023.jpg)  
+  Total across all years: ~742k PLN gross, 603k PLN net, 138k PLN tax.
+
+- **Cost by location (all locations):**  
+  ![locations_all](images/koszt_akcji_lokalizacja_wszystkie_naraz.jpg)  
+  Best-performing:  
+  - **Park Rozrywki** – 610 000 PLN net, 244 participants  
+  - **Park przy lesie** – 287 220 PLN net, 1056 participants
+
+---
+
+#### 2. Detailed Analysis – Year 2023
+
+- **Highlighted dashboard:**  
+  ![2023_total](images/koszt_akcji_2023_calosc.jpg)  
+  Largest spike in October.
+
+- **Net cost by month:**  
+  ![2023_month_netto](images/koszt_akcji_2023_calosc.jpg)  
+  October exceeded 0.40 mln PLN.
+
+- **Tax cost by month:**  
+  ![2023_tax](images/akcje_calosc.jpg)  
+  Peak tax value: 91k PLN in October.
+
+---
+
+#### 3. Attraction Popularity (Ticket Sales)
+
+- **Most popular attractions:**  
+  ![popularity](images/zainteresowanieK.png)  
+  Highest interest:  
+  - Inflatable Castle  
+  - Flight Simulator  
+  - Extreme Ride  
+
+---
+
+#### 4. Participants in Marketing Actions
+
+- **By month / quarter / year:**  
+  ![participants](images/uczestnicy_calosc.jpg)
+
+  - Most activity: February & December  
+  - Q4 has 577 participants (37%)  
+  - 2022 had the highest participant count (~1000)  
+  - 2023–2024 show a strong decline
+
+---
+
+#### 5. Key Insights
+
+- **2023 had the highest marketing costs**, more than double other years.  
+- **October is the most expensive month**, driven by seasonal campaigns.  
+- Best-performing locations: **Park Rozrywki** and **Park przy lesie**.  
+- **Carousels are unprofitable** and rarely attended.  
+- Marketing participation **declines year-to-year**, suggesting the need for strategy changes.  
+- Participant spikes in winter show **seasonal interest patterns**.
+
 
 ## Planned Project Completion Date: 03.06.2024.

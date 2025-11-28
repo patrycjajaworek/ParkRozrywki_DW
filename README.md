@@ -64,6 +64,8 @@ BAZA II
 
 - **Perspektywy:** Utworzono perspektywę Marketing, zawężającą widok do danych dotyczących klientów, co ułatwia pracę analitykom.
 
+  ![Perspektywa](images/perspektywa.jpg)
+
 - **Model tabelaryczny – Fakt AkcjaMarketingowa:** Zbudowano model obejmujący koszty netto i brutto oraz liczbę uczestników akcji. Dodano perspektywę Uczestnik, skupiającą się na danych osobowych uczestników działań marketingowych.
 
 - **Raporty Excel:** Na podstawie modeli SSAS przygotowano zestaw analiz w formie tabel przestawnych, obejmujących m.in. przychody, pochodzenie klientów, popularność atrakcji, koszty kampanii i liczbę uczestników.
@@ -149,8 +151,20 @@ BASE II
 
 
 #### PHASE III (15.04.2024 - 13.05.2024)
-- **Objective:** Design and implementation of an OLAP model in the form of a tabular database (MS SSAS) along with the
-feeding
+- **Goal:** The third stage of the project required designing and building an OLAP model using SSAS Tabular, based on previously prepared data. This included creating the model structure, defining analytical measures, and configuring the data loading process.
+
+- **Main idea of the stage:** The objective was to provide a functional tabular model that enables analysis of ticket sales and marketing campaign data. The model was intended to reflect the structure of the data warehouse and support typical business analytics tasks.
+
+- **Tabular model – FactTickets:** In this part, the earlier issue was fixed and the dimClient dimension was successfully added. Relationships between tables were created, and measures such as total revenue, average ticket cost, number of entries, number of unique customers, gender-based sales, and average customer age were implemented.
+
+- **Perspectives:** A Marketing perspective was created, narrowing the view to client-related data and making analysis easier for business users.
+ ![Perspektywa](images/perspektywa.jpg)
+- **Tabular model – FactMarketingAction:** A model was built including net and gross costs as well as the number of participants in marketing actions. A Participant perspective was added, focusing solely on participant-related data.
+
+- **Excel reports:** Based on the SSAS models, several analyses were prepared using pivot tables, covering revenue trends, client origin, attraction popularity, marketing campaign costs, and participant counts.
+
+- **Refresh mechanism:** An attempt was made to create a daily refresh mechanism, but due to missing data in the local database and server permission limitations, it could not be fully implemented.
+
 
 #### PHASE IV (13.05.2024 - 03.06.2024)
 - **Objective:** Dashboards in Microsoft Power BI Desktop analysis tool.

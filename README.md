@@ -158,7 +158,7 @@ BAZA II
 
 
 
-## Planowana Data Ukończenia Projektu: 03.06.2024
+
 
 
 
@@ -326,4 +326,3 @@ BASE II
 - Participant spikes in winter show **seasonal interest patterns**.
 
 
-## Planned Project Completion Date: 03.06.2024.
